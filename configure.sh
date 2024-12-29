@@ -22,7 +22,7 @@ function env_check {
 if [ -f /etc/fake-wsl-release ]
 then
     echo "[fake WSL Environment]"
-elif [ ! -f /proc/sys/fs/binfmt_misc/WSLInterop ]
+elif [ ! -f /proc/sys/fs/binfmt_misc/WSLInterop ] && [ ! -f /proc/sys/fs/binfmt_misc/WSLInterop-late ]
 then
     echo "Your distro do not support WSL Interopability. Installation Aborted."
     exit 1
